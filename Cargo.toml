@@ -1,0 +1,10 @@
+[workspace]
+members = ["crates/*"]
+exclude = [
+  "fixtures/module-repo",
+  "fixtures/module-repo/zome",
+]
+resolver = "2"
+
+[workspace.dependencies]
+holochain_types = "0.5.0"
