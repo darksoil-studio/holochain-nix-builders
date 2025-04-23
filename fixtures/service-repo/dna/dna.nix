@@ -3,7 +3,7 @@
 {
   perSystem = { inputs', config, pkgs, system, lib, self', options, ... }: {
     packages.my_dna =
-      inputs.holochain-nix-builder.outputs.builders.${system}.dna {
+      inputs.holochain-nix-builders.outputs.builders.${system}.dna {
         dnaManifest = ./dna.yaml;
         zomes = {
           my_zome = inputs'.module.packages.my_zome;

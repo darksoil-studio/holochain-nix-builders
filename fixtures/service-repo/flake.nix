@@ -8,9 +8,8 @@
     holochain-nix-builders.url = "path:./../..";
     module = {
       url = "path:./../module-repo";
-      inputs.holochain-nix.follows = "holochain-nix-builders";
+      inputs.holochain-nix-builders.follows = "holochain-nix-builders";
     };
-    profiles-zome.url = "github:darksoil-studio/profiles-zome/main-0.5";
 
     # previousDnaVersion.url =
     #   "github:darksoil-studio/holochain-nix-builders/cab12a7cfe0c7da510f4887b7bc93321cd0b6960?dir=fixtures/service-repo";

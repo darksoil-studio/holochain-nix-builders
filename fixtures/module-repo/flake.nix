@@ -6,7 +6,6 @@
     holonix.url = "github:holochain/holonix/main-0.5";
 
     holochain-nix-builders.url = "path:./../..";
-    # profiles-zome.url = "github:darksoil-studio/profiles-zome/main-0.5";
     # previousZomeVersion.url = "github:darksoil-studio/holochain-nix-builders/67dffe4af2c8675cd47d0b404fd0473d6a93ddfd?dir=fixtures/module-repo";
   };
 
