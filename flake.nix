@@ -59,16 +59,6 @@
                 cargoArtifacts workspacePath matchingZomeHash zome-wasm-hash
                 meta zomeEnvironmentVars excludedCrates;
             };
-          sweettest = { dna, workspacePath, crateCargoToml, buildInputs ? [ ]
-            , nativeBuildInputs ? [ ], cargoArtifacts ? null }:
-            let
-              craneLib = (inputs.crane.mkLib pkgs).overrideToolchain
-                inputs'.holonix.packages.rust;
-            in pkgs.callPackage ./nix/sweettest.nix {
-              inherit dna craneLib crateCargoToml cargoArtifacts workspacePath;
-              buildInputs = buildInputs
-                ++ self'.dependencies.holochain.buildInputs;
-            };
           dna = { dnaManifest, zomes, matchingIntegrityDna ? null, meta ? { } }:
             pkgs.callPackage ./nix/dna.nix {
               inherit zomes dnaManifest matchingIntegrityDna meta;
