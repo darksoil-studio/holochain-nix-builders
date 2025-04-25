@@ -4,9 +4,6 @@
     nixpkgs.follows = "holonix/nixpkgs";
     rust-overlay.follows = "holonix/rust-overlay";
     crane.follows = "holonix/crane";
-
-    holonix.inputs.holochain.url =
-      "github:guillemcordoba/holochain/develop-0.5";
   };
 
   nixConfig = {
