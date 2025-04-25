@@ -107,7 +107,8 @@
         };
 
         packages.holochain = inputs'.holonix.packages.holochain.override {
-          cargoExtraArgs = " --features unstable-countersigning";
+          cargoExtraArgs =
+            " --features unstable-countersigning,unstable-functions";
         };
       };
     };
