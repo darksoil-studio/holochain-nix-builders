@@ -1,5 +1,5 @@
 # Build a hApp
-{ name, happ, ui, zip, writeText, runCommandNoCC, holochain, runCommandLocal
+{ name, happ, ui, zip, writeText, runCommandNoCC, holochain, hc, runCommandLocal
 , meta }:
 
 let
@@ -26,7 +26,7 @@ let
       cp ${happ.meta.debug} workdir/happ.happ
       cp ${manifestYaml} workdir/web-happ.yaml
 
-    	${holochain}/bin/hc web-app pack workdir
+    	${hc}/bin/hc web-app pack workdir
     	mv workdir/${name}.webhapp $out
   '';
 
@@ -41,6 +41,6 @@ in runCommandNoCC "${name}-webhapp" {
     cp ${happ} workdir/happ.happ
     cp ${manifestYaml} workdir/web-happ.yaml
 
-  	${holochain}/bin/hc web-app pack workdir
+  	${hc}/bin/hc web-app pack workdir
   	mv workdir/${name}.webhapp $out
 ''
