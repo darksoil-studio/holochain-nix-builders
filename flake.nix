@@ -78,7 +78,7 @@
         };
 
         dependencies.holochain.buildInputs =
-          [ pkgs.perl pkgs.cmake pkgs.openssl ]
+          (with pkgs; [ perl cmake openssl go ])
           ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.pkg-config ])
           # Holochain needs `clang` to build but the clang provided for x86_64-darwin fetches the wrong macos SDK.
           ++ (pkgs.lib.optionals (system != "x86_64-darwin") [ pkgs.clang ])
