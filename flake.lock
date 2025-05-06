@@ -197,16 +197,16 @@
         "versions": "versions"
       },
       "locked": {
-        "lastModified": 1746538625,
-        "narHash": "sha256-ejiltPC/Kn2UUthtQEg9tY7yvcY7oCEpbP9YyA1Nd6M=",
+        "lastModified": 1746540933,
+        "narHash": "sha256-ZsDMu8ryRC5bzmXe1MsbM+f0Bun7Z/CTYKDX3cr5Kl0=",
         "owner": "guillemcordoba",
         "repo": "holochain",
-        "rev": "7d5f3717f46ef8c6dd8af060ae97f6340bf76855",
+        "rev": "4adb405feabaaf0cc61f9c3ed0f39969b9420a67",
         "type": "github"
       },
       "original": {
         "owner": "guillemcordoba",
-        "ref": "backport-call-from-post-commit",
+        "ref": "develop-0.5",
         "repo": "holochain",
         "type": "github"
       }
