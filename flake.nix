@@ -2,8 +2,7 @@
   inputs = {
     holonix.url = "github:holochain/holonix/main-0.5";
     holonix.inputs.holochain.follows = "holochain";
-    holochain.url =
-      "github:guillemcordoba/holochain/backport-call-from-post-commit";
+    holochain.url = "github:guillemcordoba/holochain/develop-0.5";
 
     nixpkgs.follows = "holonix/nixpkgs";
     rust-overlay.follows = "holonix/rust-overlay";
