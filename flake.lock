@@ -228,15 +228,30 @@
         "type": "github"
       }
     },
+    "holochain_3": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745503820,
+        "narHash": "sha256-EmV7QpUrJq/8RJg63nah1MMpQ5fRZSBI8AioCNGb1M8=",
+        "owner": "holochain",
+        "repo": "holochain",
+        "rev": "6878bd2a8cdd03954a6ee954d76c1c4675fd8af9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "holochain",
+        "ref": "holochain-0.5.1",
+        "repo": "holochain",
+        "type": "github"
+      }
+    },
     "holonix": {
       "inputs": {
         "crane": "crane_2",
         "flake-parts": "flake-parts_2",
         "hc-launch": "hc-launch",
         "hc-scaffold": "hc-scaffold",
-        "holochain": [
-          "holochain"
-        ],
+        "holochain": "holochain_3",
         "kitsune2": "kitsune2",
         "lair-keystore": "lair-keystore",
         "nixpkgs": "nixpkgs_2",
@@ -431,6 +446,9 @@
         "crane": [
           "holonix",
           "crane"
+        ],
+        "custom-holochain-holonix": [
+          "holonix"
         ],
         "holochain": "holochain",
         "holonix": "holonix",
