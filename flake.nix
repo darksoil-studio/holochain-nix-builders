@@ -2,6 +2,10 @@
   inputs = {
     holonix.url = "github:holochain/holonix/main-0.5";
 
+    custom-holonix.url = "github:holochain/holonix/main-0.5";
+    holochain.url = "github:guillemcordoba/holochain/develop-0.5";
+    custom-holonix.inputs.holochain.follows = "holochain";
+
     nixpkgs.follows = "holonix/nixpkgs";
     rust-overlay.follows = "holonix/rust-overlay";
     crane.follows = "holonix/crane";
@@ -108,6 +112,12 @@
           cargoExtraArgs =
             " --features unstable-countersigning,unstable-functions";
         };
+
+        packages.holochain-iroh-transport =
+          inputs'.custom-holonix.packages.holochain.override {
+            cargoExtraArgs =
+              " --features unstable-countersigning,unstable-functions";
+          };
       };
     };
 }
