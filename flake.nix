@@ -108,12 +108,7 @@
           packages = [ pkgs.pnpm ];
         };
 
-        packages.holochain = inputs'.holonix.packages.holochain.override {
-          cargoExtraArgs =
-            " --features unstable-countersigning,unstable-functions";
-        };
-
-        packages.custom-holochain =
+        packages.holochain =
           inputs'.custom-holonix.packages.holochain.override {
             cargoExtraArgs =
               " --features unstable-countersigning,unstable-functions";
