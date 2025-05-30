@@ -113,7 +113,7 @@
             " --features unstable-countersigning,unstable-functions";
         };
 
-        packages.holochain-iroh-transport =
+        packages.custom-holochain =
           inputs'.custom-holonix.packages.holochain.override {
             cargoExtraArgs =
               " --features unstable-countersigning,unstable-functions";
