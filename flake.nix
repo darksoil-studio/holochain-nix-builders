@@ -83,14 +83,7 @@
         };
 
         dependencies.holochain.buildInputs =
-          (with pkgs; [ perl cmake openssl go ])
-          ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.pkg-config ])
-          # Holochain needs `clang` to build but the clang provided for x86_64-darwin fetches the wrong macos SDK.
-          ++ (pkgs.lib.optionals (system != "x86_64-darwin") [ pkgs.clang ])
-          # On intel macs, the default SDK is still 10.12 and Holochain won't build against that because we're
-          # using a newer Go version. So override with the newest SDK available for x86_64-darwin.
-          ++ (pkgs.lib.optional (system == "x86_64-darwin")
-            pkgs.apple-sdk_10_15);
+          (with pkgs; [ perl cmake clang go ]);
 
         devShells.holochainDev = pkgs.mkShell {
           packages = [ inputs'.holonix.packages.rust ];
