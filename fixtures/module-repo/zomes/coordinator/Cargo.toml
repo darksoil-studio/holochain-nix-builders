@@ -11,6 +11,7 @@ name = "my_zome"
 
 [dependencies]
 hdk = { workspace = true }
+holochain_serialized_bytes = "*"
 serde = "1"
 my_zome_integrity = { path = "../integrity" }
 
