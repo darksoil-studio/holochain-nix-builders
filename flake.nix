@@ -83,7 +83,7 @@
         };
 
         dependencies.holochain.buildInputs =
-          (with pkgs; [ perl cmake clang go ]);
+          (with pkgs; [ perl cmake clang go llvmPackages_18.libunwind ]);
 
         devShells.holochainDev = pkgs.mkShell {
           packages = [ inputs'.holonix.packages.rust ];
