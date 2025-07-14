@@ -2,6 +2,13 @@
   inputs = {
     holonix.url = "github:holochain/holonix/main-0.5";
 
+    # TODO: Remove when https://github.com/holochain/holochain/issues/5130 is resolved
+    holonix.inputs.holochain.follows = "holochain";
+    holochain.url = "github:holochain/holochain/holochain-0.5.4";
+    holochain.inputs.repo-git.follows = "empty";
+    empty.url = "github:steveej/empty";
+    empty.flake = false;
+
     # custom-holonix.url = "github:holochain/holonix/main-0.5";
     # holochain.url = "github:guillemcordoba/holochain/develop-0.5";
     # custom-holonix.inputs.holochain.follows = "holochain";
