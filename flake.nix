@@ -80,6 +80,7 @@
 
         dependencies.holochain.buildInputs =
           (with pkgs; [ perl cmake clang llvmPackages_18.libunwind openssl ]);
+        dependencies.holochain.nativeBuildInputs = (with pkgs; [ pkg-config ]);
 
         devShells.holochainDev = pkgs.mkShell {
           packages = [ inputs'.holonix.packages.rust ];
