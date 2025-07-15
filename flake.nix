@@ -85,6 +85,7 @@
         devShells.holochainDev = pkgs.mkShell {
           packages = [ inputs'.holonix.packages.rust ];
           buildInputs = self'.dependencies.holochain.buildInputs;
+          nativeBuildInputs = self'.dependencies.holochain.nativeBuildInputs;
 
           shellHook = ''
             # Make sure libdatachannel can find C++ standard libraries from clang.
