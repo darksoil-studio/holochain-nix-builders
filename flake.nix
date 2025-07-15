@@ -2,10 +2,6 @@
   inputs = {
     holonix.url = "github:holochain/holonix/main-0.5";
 
-    # custom-holonix.url = "github:holochain/holonix/main-0.5";
-    # holochain.url = "github:guillemcordoba/holochain/develop-0.5";
-    # custom-holonix.inputs.holochain.follows = "holochain";
-
     nixpkgs.follows = "holonix/nixpkgs";
     rust-overlay.follows = "holonix/rust-overlay";
     crane.follows = "holonix/crane";
@@ -83,7 +79,7 @@
         };
 
         dependencies.holochain.buildInputs =
-          (with pkgs; [ perl cmake clang go llvmPackages_18.libunwind ]);
+          (with pkgs; [ perl cmake clang llvmPackages_18.libunwind openssl ]);
 
         devShells.holochainDev = pkgs.mkShell {
           packages = [ inputs'.holonix.packages.rust ];
