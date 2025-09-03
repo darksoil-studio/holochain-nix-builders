@@ -75,6 +75,8 @@ let
     inherit src;
     doCheck = false;
     CARGO_BUILD_TARGET = "wasm32-unknown-unknown";
+    CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUSTFLAGS =
+      ''--cfg getrandom_backend="custom"'';
     pname = "${workspaceName}-workspace";
     version = cargoToml.package.version;
     cargoBuildCommand =
