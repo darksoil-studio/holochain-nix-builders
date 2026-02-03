@@ -10,7 +10,7 @@ let
 
   # Recurse over the zomes, and add the correct bundled zome package by name
   manifest = (pkgs.callPackage ./import-yaml.nix { }) dnaManifest;
-  zomeToBundled = zome: zome // { bundled = "./${zome.name}.wasm"; };
+  zomeToBundled = zome: zome // { path = "./${zome.name}.wasm"; };
   coordinatorZomes = builtins.map zomeToBundled manifest.coordinator.zomes;
   integrityZomes = builtins.map zomeToBundled manifest.integrity.zomes;
 
