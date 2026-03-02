@@ -14,9 +14,9 @@ let
     manifest_version: "1"
     name: ${name}
     ui:
-      bundled: ./ui.zip
+      path: ./ui.zip
     happ_manifest:
-      bundled: ./happ.happ
+      path: ./happ.happ
   '';
 
   debug = runCommandLocal "${name}-debug" { srcs = [ happ.meta.debug ui ]; } ''

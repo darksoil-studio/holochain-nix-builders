@@ -10,7 +10,7 @@ let
   manifest = (callPackage ./import-yaml.nix { }) happManifest;
   dnaToBundled = role:
     role // {
-      dna = role.dna // { bundled = "./${role.name}.dna"; };
+      dna = role.dna // { path = "./${role.name}.dna"; };
     };
 
   manifest' = manifest // { roles = builtins.map dnaToBundled manifest.roles; };
